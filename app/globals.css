@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.format
+{
+		max-width:100% !important;
+
+}
+
+.landing-page-card
+{
+		border:none !important;
+		box-shadow: none !important;
+
+}
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  padding: 0;
+  margin: 56px 0 -13px -1.883px;
+  text-align: left;
+  line-height: 34.5px;
+  letter-spacing: -0.45px;
+}
+
+p, i, a {
+  margin-top: 21px;
+  font-family: "Lora";
+  font-size: 21px;
+  letter-spacing: -0.03px;
+  line-height: 1.58;
+}
+/* Remove default numbering for the ordered list */
+ol {
+  list-style: none;
+  padding-left: 0; /* Optional: Remove default left padding */
+}
+
+/* Style the list item as a bullet point */
+ol li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 21px; /* Adjust the font size to change the size of the bullet */
+  line-height: 1.58;
+  font-family: "Lora";  /* Adjust the padding to control the distance between the bullet and content */
+}
+
+/* Style the custom bullet point */
+ol li::before {
+  content: "•"; /* Use any symbol or image here to represent the bullet */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 21px; /* Adjust the font size to change the size of the bullet */
+  line-height: 1.58; /* Optional: Adjust the line-height for vertical alignment */
+}
+ul li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 21px; /* Adjust the font size to change the size of the bullet */
+  line-height: 1.58;
+  font-family: "Lora";  /* Adjust the padding to control the distance between the bullet and content */
+}
+
+/* Style the custom bullet point */
+ul li::before {
+  /*content: "•"; /* Use any symbol or image here to represent the bullet */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 21px; /* Adjust the font size to change the size of the bullet */
+  line-height: 1.58; /* Optional: Adjust the line-height for vertical alignment */
+}
+.prem_svg
+{
+		background:url(data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgMjAwMCA1MDAiIHdpZHRoPSIyMDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNGRkZGRkYiPjwvcmVjdD48cGF0aCBkPSJNMCAxNTZMNDcuNyAxNTYuMkM5NS4zIDE1Ni4zIDE5MC43IDE1Ni43IDI4NS44IDE1Mi4yQzM4MSAxNDcuNyA0NzYgMTM4LjMgNTcxLjIgMTMyLjJDNjY2LjMgMTI2IDc2MS43IDEyMyA4NTcgMTM5LjVDOTUyLjMgMTU2IDEwNDcuNyAxOTIgMTE0MyAyMTguMkMxMjM4LjMgMjQ0LjMgMTMzMy43IDI2MC43IDE0MjguOCAyNDMuMkMxNTI0IDIyNS43IDE2MTkgMTc0LjMgMTcxNC4yIDE2OEMxODA5LjMgMTYxLjcgMTkwNC43IDIwMC4zIDE5NTIuMyAyMTkuN0wyMDAwIDIzOUwyMDAwIDBMMTk1Mi4zIDBDMTkwNC43IDAgMTgwOS4zIDAgMTcxNC4yIDBDMTYxOSAwIDE1MjQgMCAxNDI4LjggMEMxMzMzLjcgMCAxMjM4LjMgMCAxMTQzIDBDMTA0Ny43IDAgOTUyLjMgMCA4NTcgMEM3NjEuNyAwIDY2Ni4zIDAgNTcxLjIgMEM0NzYgMCAzODEgMCAyODUuOCAwQzE5MC43IDAgOTUuMyAwIDQ3LjcgMEwwIDBaIiBmaWxsPSIjZGJlYWZlIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiPjwvcGF0aD48L3N2Zz4=) no-repeat white
+
+}
+.notice
+{
+	height: 30px;
+    margin-top: 60px;
+	font-size: 1rem ;
+}
