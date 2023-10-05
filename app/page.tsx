@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import chatGptIcon from '../public/icons8-chatgpt.svg';
-import Footer from './components/Footer';
 
 export default function LandingPage() {
   const router = useRouter();
@@ -167,9 +166,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }
