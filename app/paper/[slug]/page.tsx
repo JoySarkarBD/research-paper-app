@@ -1,4 +1,5 @@
 'use client';
+import Footer from 'app/components/Footer';
 import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import BeautifulArticle from '../../article';
@@ -39,17 +40,18 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
   }, slug); // This effect runs whenever the slug changes
 
   return (
-    <main className="">
-      <div className="">
-        <div className="flex flex-col items-center landing-page-card custom-bg h-auto">
-          <section className="bg-cover bg-center w-2/3">
+    <>
+      <main>
+        <section className="flex flex-col items-center landing-page-card custom-bg min-h-screen h-full">
+          <div className="bg-cover bg-center w-2/3">
             <p className="text-[#FCFBFE] ">
               Status: <span className="text-[#AEB5CA] ">{status}</span>
             </p>{' '}
             <BeautifulArticle article_data={artData} />
-          </section>
-        </div>
-      </div>
-    </main>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
