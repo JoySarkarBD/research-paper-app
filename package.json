@@ -48,9 +48,5 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "flowbite-typography": "^1.0.3"
   }
 }

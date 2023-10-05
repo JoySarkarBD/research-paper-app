@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .custom-bg {
+    @apply bg-gradient-to-b from-[#150f35] via-[#110d2e] via-[#0d0a26] via-[#08071e] to-[#020316];
+  }
+}
+
 .format {
   max-width: 100% !important;
 }
@@ -191,7 +197,7 @@ ul li::before {
     #08071e,
     #020316
   );
-  margin-top: -56px;
+  /* margin-top: -56px; */
 }
 
 .recent_box {
@@ -220,5 +226,5 @@ ul li::before {
     #08071e,
     #020316
   );
-  margin-top: -17px;
+  /* margin-top: -17px; */
 }
