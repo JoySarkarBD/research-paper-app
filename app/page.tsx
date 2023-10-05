@@ -109,18 +109,24 @@ export default function LandingPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {papers.map((paper) => (
-                    <tr key={paper.id} className=" ">
-                      <td className=" py-2 border-b">
-                        <Link
-                          href={`${paper.id}`}
-                          className="text-[#b4bcd0] text-lg "
-                        >
-                          {paper.result}
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
+                  {papers.length > 0 ? (
+                    papers.map((paper) => (
+                      <tr key={paper.id} className=" ">
+                        <td className=" py-2 border-b">
+                          <Link
+                            href={`${paper.id}`}
+                            className="text-[#b4bcd0] text-lg "
+                          >
+                            {paper.result}
+                          </Link>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <h3 className="text-[#b4bcd0] font-bold text-lg mt-5">
+                      No Result Found...!
+                    </h3>
+                  )}
                 </tbody>
               </table>
             </div>
