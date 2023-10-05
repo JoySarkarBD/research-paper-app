@@ -7,6 +7,10 @@ export default {
     './node_modules/@tremor/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      backgroundImage: {
+        hero: 'url(./../public/banner.png)'
+      }
+    }
   }
 } as Config;
