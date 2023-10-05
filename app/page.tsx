@@ -1,7 +1,7 @@
 'use client';
 // import { Card } from '@tremor/react';
+import Link from 'next/Link';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import chatGptIcon from '../public/icons8-chatgpt.svg';
@@ -108,11 +108,6 @@ export default function LandingPage() {
                         }
                       }}
                     />
-                    <input
-                      type="submit"
-                      className="rstore-domain-search-button search-submit  font-bold text-white cursor-pointer outline-none text-base absolute btn btn-primary "
-                      value="Search with AI"
-                    />
                     <div className="chat_icon">
                       <Image src={chatGptIcon} alt="" />
                     </div>
@@ -126,80 +121,96 @@ export default function LandingPage() {
           <div className="gradient-bottom flex-none overflow-hidden absolute bg-[#7c2afd] "></div>
         </section>
 
-        <section className=" recent_section w-full h-auto bg-[#000213]">
-          <div className=" mx-auto max-w-4xl">
-            <h2 className="text-xl font-semibold mb-4">
-              Recently Added Papers
-            </h2>
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left py-2">Title</th>
-                </tr>
-              </thead>
-              <tbody>
-                {papers.map((paper) => (
-                  <tr key={paper.id} className="border-b">
-                    <Link href={`${paper.id}`}>{paper.result}</Link>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
+        <div className="rest_of_section w-full h-auto py-14">
+          <section className="pt-14 mx-auto container">
+            <div className="recent_box px-6 pb-10  max-w-4xl mx-auto">
+              <h3 className="text-2xl font-semibold mb-12 text-[#F7F8F8] pt-14">
+                Recently Added Papers
+              </h3>
 
-        <section className="mt-10">
-          <div className="flex justify-center">
-            <div className="w-1/2">
-              <h2
-                htmlFor="arxivLink"
-                className="text-center text-xl font-semibold mb-4"
-              >
-                OR
-              </h2>
-              <h2 htmlFor="arxivLink" className="text-xl font-semibold mb-4">
-                Submit arXiv link below to add the paper to coverage
-              </h2>
-              <div className="flex items-center">
-                <input
-                  type="text"
-                  id="arxivLink"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-                  placeholder="Paste arXiv link here"
-                  value={arxivLink}
-                  onChange={(e) => setArxivLink(e.target.value)}
-                />
-                <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full"
-                  onClick={handleSubmit}
+              <table className="table-auto w-full text-left mb-12">
+                <thead>
+                  <tr>
+                    <th className="border-b-2 text-[#b4bcd0] text-xl font-normal pb-2">
+                      Song
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {papers.map((paper) => (
+                    <tr key={paper.id} className=" ">
+                      <td className=" py-2 border-b">
+                        <Link
+                          href={`${paper.id}`}
+                          className="text-[#b4bcd0] text-lg "
+                        >
+                          {paper.result}
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="">
+            <div className="flex justify-center items-center w-full">
+              <div className="container mx-auto ">
+                <h2
+                  htmlFor="arxivLink"
+                  className="text-center text-2xl font-semibold my-8 text-[#F7F8F8] "
                 >
-                  {' '}
-                  Submit
-                </button>
+                  OR
+                </h2>
+
+                <div className="recent_box px-6 pb-10 max-w-4xl mx-auto ">
+                  <h2
+                    htmlFor="arxivLink"
+                    className="text-xl font-semibold mb-4 text-[#b4bcd0]"
+                  >
+                    Submit arXiv link below to add the paper to coverage
+                  </h2>
+                  <div className=" w-full ">
+                    <input
+                      type="text"
+                      id="arxivLink"
+                      className="w-full py-4 px-6 border border-[#181A2D] rounded-lg bg-[#181A2D] "
+                      placeholder="Paste arXiv link here"
+                      value={arxivLink}
+                      onChange={(e) => setArxivLink(e.target.value)}
+                    />
+                    <div className="flex justify-end">
+                      <button
+                        className="searchButton bg-[#4C6699] text-[#F1ECF5]  py-3 px-6 rounded-lg mt-3"
+                        onClick={handleSubmit}
+                      >
+                        {' '}
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-          <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-              © 2023{' '}
-              <a href="https://paperplainer.com" className="hover:underline">
-                PaperPlainer
+        <div className="footer-section">
+          <div className="w-full p-4 text-center text-xs text-white">
+            © 2023 Copyright
+            <a href="https://paperplainer.com" className="text-lg">
+              PaperPlainer
+            </a>
+            . All Rights Reserved. For feedback/modifications reach out to
+            prem@paperplainer.com
+            <span className="ps-8 text-lg">
+              <a href="/privacy" className=" hover:underline md:mr-6">
+                Privacy Policy
               </a>
-              . All Rights Reserved. For feedback/modifications reach out to
-              prem@paperplainer.com
             </span>
-            <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-              <li>
-                <a href="/privacy" className="mr-4 hover:underline md:mr-6">
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
           </div>
-        </section>
+        </div>
         {/* </Card> */}
       </div>
     </main>
