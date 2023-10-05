@@ -18,6 +18,7 @@
   border: none !important;
   box-shadow: none !important;
 }
+
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
@@ -96,63 +97,7 @@ ul li::before {
   font-size: 1rem;
 }
 
-.problem_box {
-  background-image: linear-gradient(
-    to right,
-    #050418,
-    #121223,
-    #1c1a2f,
-    #27233b,
-    #322b47,
-    #342b49,
-    #372c4c,
-    #392c4e,
-    #322548,
-    #2b1e41,
-    #24183b,
-    #1d1135
-  );
-  box-shadow: 0 50px 30px -20px #0003;
-}
-
-.solution_box {
-  background-image: linear-gradient(
-    to right,
-    #090d25,
-    #0c112a,
-    #0e152f,
-    #101735,
-    #131a3a,
-    #151c3c,
-    #181f3e,
-    #1a2140,
-    #1c233f,
-    #1f253f,
-    #21273e,
-    #24293d
-  );
-  box-shadow: 0 50px 30px -20px #0003;
-}
-
-.chart_box {
-  background-image: linear-gradient(
-    to right,
-    #0f1b2b,
-    #101e2f,
-    #112132,
-    #112536,
-    #122839,
-    #112738,
-    #112737,
-    #102636,
-    #0e2131,
-    #0c1d2b,
-    #0a1826,
-    #071321
-  );
-  box-shadow: 0 50px 30px -20px #0003;
-}
-
+/* article page custom css start */
 #article-content1 h3 {
   font-size: 24px;
   font-weight: 500;
@@ -183,3 +128,4 @@ ul li::before {
   margin: 10px 0;
   line-height: 1.35;
 }
+/* article page custom css end */
