@@ -57,11 +57,11 @@ export default function LandingPage() {
             Understand Research Papers using ChatGPT
             <div className="absolute flex-none overflow-hidden bg-no-repeat inset-0"></div>
           </h1>
-          <div className="search_area">
+          <div className="max-w-[800px] w-full z-[99]">
             <h4 className="text-[28px] text-white mb-[25px]">
               Search for papers covered already
             </h4>
-            <div className="search_box p-2.5 rounded-[25px] w-full">
+            <div className="shadow-[0_50px_30px_-20px_#0003] bg-[rgba(255,255,255,0.7)] backdrop-blur-[10px] p-2.5 rounded-[25px] w-full">
               <form className="search-form">
                 <div className="input-group">
                   <div className="input-group2 flex flex-nowrap relative">
