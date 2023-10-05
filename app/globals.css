@@ -199,32 +199,3 @@ ul li::before {
   );
   /* margin-top: -56px; */
 }
-
-.recent_box {
-  /* background-color: rgba(255, 255, 255, 0.25); */
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background-image: linear-gradient(
-    to bottom,
-    #050718,
-    #080a1b,
-    #0b0d1f,
-    #0d0f22,
-    #0f1126
-  );
-}
-
-.footer-section {
-  background-image: linear-gradient(
-    to bottom,
-    #150f35,
-    #110d2e,
-    #0d0a26,
-    #08071e,
-    #020316
-  );
-  /* margin-top: -17px; */
-}

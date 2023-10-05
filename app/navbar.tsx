@@ -1,18 +1,17 @@
 'use client';
 
-import { Fragment } from 'react';
-import { usePathname } from 'next/navigation';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Fragment } from 'react';
 
+import googleSignIn from '../public/btn_google_signin_dark_normal_web.png';
 import logo from '../public/logo.png';
-import googleSignIn from "../public/btn_google_signin_dark_normal_web.png"
 
-const navigation = [
-];
+const navigation = [];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -28,12 +27,21 @@ export default function Navbar({ user }: { user: any }) {
             <div className="flex h-24 justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center mt-5">
-                    <Link href="/">
-						  <Image src={logo} alt="PaperPlainer.com" className="w-300" />
-					  </Link>
+                  <Link href="/">
+                    <Image
+                      src={logo}
+                      alt="PaperPlainer.com"
+                      className="w-300"
+                    />
+                  </Link>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-<a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice"><strong className="font-semibold">Connect with the contact below to enhance this tool further</strong></a>
+                  <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
+                    <strong className="font-semibold">
+                      Connect with the contact below to enhance this tool
+                      further
+                    </strong>
+                  </a>
                   {navigation.map((item) => (
                     <a
                       key={item.name}
@@ -56,7 +64,7 @@ export default function Navbar({ user }: { user: any }) {
                   <div>
                     <Menu.Button className="flex rounded-full bg-opacity-100 text-md focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
                       <span className="sr-only">Open user menu</span>
-					  Sign In/Sign Up
+                      Sign In/Sign Up
                     </Menu.Button>
                   </div>
                   <Transition
@@ -86,17 +94,21 @@ export default function Navbar({ user }: { user: any }) {
                       ) : (
                         <Menu.Item>
                           {({ active }) => (
-							<button
-							  className={classNames(
-								active ? 'bg-gray-100' : '',
-								'flex w-full text-sm text-gray-700 focus:outline-none'
-							  )}
-							  onClick={() => signIn('google')}
-							>
-							  <div className="flex items-center">
-								<Image src={googleSignIn} alt="Google Sign in" className="w-60 h-10" />
-							  </div>
-							</button>
+                            <button
+                              className={classNames(
+                                active ? 'bg-gray-100' : '',
+                                'flex w-full text-sm text-gray-700 focus:outline-none'
+                              )}
+                              onClick={() => signIn('google')}
+                            >
+                              <div className="flex items-center">
+                                <Image
+                                  src={googleSignIn}
+                                  alt="Google Sign in"
+                                  className="w-60 h-10"
+                                />
+                              </div>
+                            </button>
                           )}
                         </Menu.Item>
                       )}

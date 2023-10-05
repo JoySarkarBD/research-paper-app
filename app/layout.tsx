@@ -2,7 +2,6 @@ import './globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import { Suspense } from 'react';
-import Footer from './components/Footer';
 import Nav from './nav';
 
 export const metadata = {
@@ -24,8 +23,6 @@ export default async function RootLayout({
           <Nav />
         </Suspense>
         {children}
-        {/* Footer */}
-        <Footer />
         <Analytics />
       </body>
     </html>
