@@ -43,7 +43,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
     <>
       <main>
         <section className="flex flex-col items-center landing-page-card custom-bg min-h-screen h-full">
-          <div className="bg-cover bg-center w-2/3">
+          <div className="container w-full">
             <p className="text-[#FCFBFE] ">
               Status: <span className="text-[#AEB5CA] ">{status}</span>
             </p>{' '}
