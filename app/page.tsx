@@ -117,7 +117,7 @@ export default function LandingPage() {
                               <td className=" py-2 border-b">
                                 <Link
                                   href={`${paper.id}`}
-                                  className="text-white text-lg "
+                                  className="text-slate-300 text-lg "
                                 >
                                   {paper.result}
                                 </Link>
@@ -125,7 +125,7 @@ export default function LandingPage() {
                             </tr>
                           ))
                         ) : (
-                          <h3 className="text-white font-bold text-lg mt-5">
+                          <h3 className="text-slate-300 font-bold text-lg mt-5">
                             No Result Found...!
                           </h3>
                         )}
