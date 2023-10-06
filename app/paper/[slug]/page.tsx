@@ -42,12 +42,18 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <main>
-        <section className="flex flex-col items-center landing-page-card custom-bg min-h-screen h-full">
-          <div className="container w-full">
-            <p className="text-[#FCFBFE] ">
-              Status: <span className="text-[#AEB5CA] ">{status}</span>
-            </p>{' '}
-            <BeautifulArticle article_data={artData} />
+        <section className="custom-bg h-auto w-full">
+          <div>
+            <div className="container mx-auto">
+              <div className="flex items-center justify-center  w-full">
+                <div className="w-full min-w-[300px] max-w-4xl">
+                  <p className="text-[#FCFBFE]">
+                    Status: <span className="text-[#AEB5CA] ">{status}</span>
+                  </p>{' '}
+                  <BeautifulArticle article_data={artData} />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
