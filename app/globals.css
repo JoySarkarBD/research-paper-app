@@ -115,5 +115,10 @@ ul li::before {
   line-height: 1.58 !important;
   color: rgb(203 213 225);
 }
+#article-content1 p,
+#article-content2 p,
+#article-content3 p {
+  margin-top: 5px;
+}
 
 /* article page custom css end */
