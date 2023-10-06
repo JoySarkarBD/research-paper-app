@@ -93,48 +93,53 @@ export default function LandingPage() {
         {/* Recently Added Papers or Submit arXiv link Section */}
         <section className="custom-bg w-full h-auto py-14">
           {/* Recently Added Papers */}
-          <div className="pt-14 mx-auto container">
-            <div className="recent_box shadow-[] px-6 pb-10  max-w-4xl mx-auto">
-              <h3 className="text-2xl font-semibold mb-12 text-[#F7F8F8] pt-14">
-                Recently Added Papers
-              </h3>
-
-              <table className="table-auto w-full text-left mb-12">
-                <thead>
-                  <tr>
-                    <th className="border-b-2 text-[#b4bcd0] text-xl font-normal pb-2">
-                      Title
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {papers.length > 0 ? (
-                    papers.map((paper) => (
-                      <tr key={paper.id} className=" ">
-                        <td className=" py-2 border-b">
-                          <Link
-                            href={`${paper.id}`}
-                            className="text-[#b4bcd0] text-lg "
-                          >
-                            {paper.result}
-                          </Link>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <h3 className="text-[#b4bcd0] font-bold text-lg mt-5">
-                      No Result Found...!
+          <div>
+            <div className="container mx-auto">
+              <div className="flex items-center justify-center  w-full">
+                <div className="w-full min-w-[300px] max-w-4xl">
+                  {' '}
+                  <div className=" recent_box px-6 pb-10">
+                    <h3 className="text-2xl font-semibold mb-12 text-[#F7F8F8] pt-14">
+                      Recently Added Papers
                     </h3>
-                  )}
-                </tbody>
-              </table>
+                    <table className="table-auto w-full text-left mb-12">
+                      <thead>
+                        <tr>
+                          <th className="border-b-2 text-[#b4bcd0] text-xl font-normal pb-2">
+                            Title
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {papers.length > 0 ? (
+                          papers.map((paper) => (
+                            <tr key={paper.id} className=" ">
+                              <td className=" py-2 border-b">
+                                <Link
+                                  href={`${paper.id}`}
+                                  className="text-[#b4bcd0] text-lg "
+                                >
+                                  {paper.result}
+                                </Link>
+                              </td>
+                            </tr>
+                          ))
+                        ) : (
+                          <h3 className="text-[#b4bcd0] font-bold text-lg mt-5">
+                            No Result Found...!
+                          </h3>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
           {/* Submit arXiv link part */}
-          <div className="">
+          <div>
             <div className="flex justify-center items-center w-full">
-              <div className="container mx-auto ">
+              <div className="container mx-auto">
                 <h2
                   htmlFor="arxivLink"
                   className="text-center text-2xl font-semibold my-8 text-[#F7F8F8] "
@@ -142,30 +147,35 @@ export default function LandingPage() {
                   OR
                 </h2>
 
-                <div className="recent_box px-6 pb-10 max-w-4xl mx-auto ">
-                  <h2
-                    htmlFor="arxivLink"
-                    className="text-xl font-semibold mb-4 text-[#b4bcd0]"
-                  >
-                    Submit arXiv link below to add the paper to coverage
-                  </h2>
-                  <div className=" w-full ">
-                    <input
-                      type="text"
-                      id="arxivLink"
-                      className="w-full py-4 px-6 border border-[#181A2D] rounded-lg bg-[#181A2D] "
-                      placeholder="Paste arXiv link here"
-                      value={arxivLink}
-                      onChange={(e) => setArxivLink(e.target.value)}
-                    />
-                    <div className="flex justify-end">
-                      <button
-                        className="searchButton bg-[#4C6699] text-[#F1ECF5]  py-3 px-6 rounded-lg mt-3"
-                        onClick={handleSubmit}
+                <div className="flex items-center justify-center w-full">
+                  <div className="w-full min-w-[300px] max-w-4xl">
+                    {' '}
+                    <div className=" recent_box px-6 pb-10">
+                      <h2
+                        htmlFor="arxivLink"
+                        className="text-xl font-semibold mb-4 text-[#b4bcd0]"
                       >
-                        {' '}
-                        Submit
-                      </button>
+                        Submit arXiv link below to add the paper to coverage
+                      </h2>
+                      <div className=" w-full ">
+                        <input
+                          type="text"
+                          id="arxivLink"
+                          className="w-full py-4 px-6 border border-[#181A2D] rounded-lg bg-[#181A2D] "
+                          placeholder="Paste arXiv link here"
+                          value={arxivLink}
+                          onChange={(e) => setArxivLink(e.target.value)}
+                        />
+                        <div className="flex justify-end">
+                          <button
+                            className="searchButton bg-[#4C6699] text-[#F1ECF5]  py-3 px-6 rounded-lg mt-3"
+                            onClick={handleSubmit}
+                          >
+                            {' '}
+                            Submit
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
