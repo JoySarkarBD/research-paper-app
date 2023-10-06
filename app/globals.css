@@ -64,7 +64,7 @@ ol li::before {
   font-size: 21px; /* Adjust the font size to change the size of the bullet */
   position: absolute;
   left: 5px;
-  top: -2px;
+  top: -0.5px;
 }
 ul li {
   position: relative;
@@ -80,7 +80,7 @@ ul li::before {
   font-size: 21px; /* Adjust the font size to change the size of the bullet */
   position: absolute;
   left: 5px;
-  top: -2px;
+  top: -0.5px;
 
   line-height: 1.58; /* Optional: Adjust the line-height for vertical alignment */
 }
