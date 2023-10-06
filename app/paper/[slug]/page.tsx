@@ -46,8 +46,8 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
           <div>
             <div className="container mx-auto">
               <div className="flex items-center justify-center  w-full">
-                <div className="w-full min-w-[300px] max-w-4xl">
-                  <p className="text-[#FCFBFE]">
+                <div className="w-full min-w-[300px] max-w-7xl">
+                  <p className="text-white">
                     Status: <span className="text-[#AEB5CA] ">{status}</span>
                   </p>{' '}
                   <BeautifulArticle article_data={artData} />
