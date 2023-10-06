@@ -1,5 +1,4 @@
 'use client';
-import Footer from 'app/components/Footer';
 import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import BeautifulArticle from '../../article';
@@ -45,7 +44,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
         <section className="custom-bg h-auto w-full">
           <div>
             <div className="container mx-auto">
-              <div className="flex items-center justify-center  w-full">
+              <div className="flex items-center justify-center w-full">
                 <div className="w-full min-w-[300px] max-w-7xl">
                   <p className="text-white">
                     Status: <span className="text-[#AEB5CA] ">{status}</span>
@@ -57,7 +56,6 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

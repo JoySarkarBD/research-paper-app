@@ -52,7 +52,7 @@ const BeautifulArticle = ({ article_data }) => {
       <div className="flex flex-wrap mt-4">
         <h1 className="text-white leading-tight ">{article_data[3]}</h1>
         <div className="w-full pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2  md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
             <div>
               {/* Problem part */}
               <div className="bg-[linear-gradient(_to_right,#050418,#121223,#1c1a2f,#27233b,#322b47,#342b49,#372c4c,#392c4e,#322548,#2b1e41,#24183b,#1d1135_)] shadow-[0px_8px_32px_0px_rgba(31,38,135,0.37)] backdrop-blur-sm border border-solid border-[rgba(255,255,255,0.18)] p-8 rounded-[38px] mb-4">

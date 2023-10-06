@@ -2,6 +2,7 @@ import './globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import { Suspense } from 'react';
+import Footer from './components/Footer';
 import Nav from './nav';
 
 export const metadata = {
@@ -17,13 +18,14 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full bg-white">
-      <body className="h-screen min-w-[320px] max-w-full w-full">
+      <body className="h-screen min-w-[320px] max-w-full w-full flex-row justify-evenly">
         <Suspense>
           {/* Navbar */}
           <Nav />
         </Suspense>
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   );
