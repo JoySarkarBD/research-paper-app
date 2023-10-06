@@ -1,4 +1,6 @@
 'use client';
+import Footer from 'app/components/Footer';
+import Navbar from 'app/navbar';
 import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import BeautifulArticle from '../../article';
@@ -40,8 +42,9 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <Navbar user={undefined} />
       <main>
-        <section className="custom-bg h-auto w-full">
+        <section className="custom-bg w-full min-h-screen h-full">
           <div>
             <div className="container mx-auto">
               <div className="flex items-center justify-center w-full">
@@ -56,6 +59,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
