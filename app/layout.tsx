@@ -17,7 +17,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full bg-white">
-      <body className="h-screen">
+      <body className="h-screen min-w-[320px] max-w-full w-full">
         <Suspense>
           {/* Navbar */}
           <Nav />

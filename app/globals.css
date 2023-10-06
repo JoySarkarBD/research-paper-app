@@ -14,11 +14,6 @@
   max-width: 100% !important;
 }
 
-.landing-page-card {
-  border: none !important;
-  box-shadow: none !important;
-}
-
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
@@ -105,9 +100,17 @@ ul li::before {
   margin: 10px 0;
 }
 
-#article-content1 ul li {
-  font-size: 20px;
-  line-height: 1.3;
+#article-content1 p,
+#article-content2 p,
+#article-content3 p,
+#article-content1 ul li p,
+#article-content2 ul li p,
+#article-content3 ul li p,
+#article-content1 ul li,
+#article-content2 ul li,
+#article-content3 ul li {
+  font-size: 17.5px !important;
+  line-height: 1.3 !important;
 }
 
 #article-content2 h3 {
@@ -115,17 +118,5 @@ ul li::before {
   font-weight: 500;
   font-family: 'Lato', sans-serif;
   margin: 10px 0;
-}
-
-#article-content2 ul li {
-  font-size: 20px;
-  line-height: 1.3;
-}
-
-#article-content3 p {
-  font-size: 20px;
-  font-family: 'Lato', sans-serif;
-  margin: 10px 0;
-  line-height: 1.35;
 }
 /* article page custom css end */
