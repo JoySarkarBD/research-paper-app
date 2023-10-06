@@ -53,15 +53,15 @@ export default function LandingPage() {
       <main>
         {/* Understand Research Papers using ChatGPT Section */}
         <section className="content-center items-center flex flex-none flex-col flex-nowrap justify-center h-screen overflow-hidden p-0 relative w-full text-center bg-hero bg-no-repeat bg-center bg-cover">
-          <h1 className="relative text-[70px] text-white z-[3] max-w-[840px] w-full bg-[linear-gradient(_109.6deg,rgb(101,245,245)_11.2%,rgb(155,99,224)_92.5%_)] bg-clip-text brightness-[1.85] mb-2 text-center leading-none ">
+          <h1 className="relative text-[30px] sm:text-[26px]  xmd:text-[70px] text-white z-[3] min-w-[300px] max-w-[840px] w-full bg-[linear-gradient(_109.6deg,rgb(101,245,245)_11.2%,rgb(155,99,224)_92.5%_)] bg-clip-text brightness-[1.85] mb-2 text-center leading-none">
             Understand Research Papers using ChatGPT
             <div className="absolute flex-none overflow-hidden bg-no-repeat inset-0"></div>
           </h1>
           <div className="max-w-[800px] w-full z-[99]">
-            <h4 className="text-[28px] text-white mb-[25px]">
+            <h4 className="text-[15px] sm:text-[22px] xmd:text-[28px] text-white mb-[25px]">
               Search for papers covered already
             </h4>
-            <div className="shadow-[0_50px_30px_-20px_#0003] bg-[rgba(255,255,255,0.7)] backdrop-blur-[10px] p-2.5 rounded-[25px] w-full">
+            <div className="shadow-[0_50px_30px_-20px_#0003] bg-[rgba(255,255,255,0.7)] backdrop-blur-[10px] p-2.5 rounded-[25px] w-10/12 xmd:w-full mx-auto">
               <form className="search-form">
                 <div className="input-group">
                   <div className="input-group2 flex flex-nowrap relative">

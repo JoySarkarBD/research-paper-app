@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xsm: { min: '0px' },
+        sm: { min: '481px' },
+        xmd: { min: '641px' }
+      },
       backgroundImage: {
         hero: 'url(./../public/banner.png)'
       }
