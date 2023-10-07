@@ -1,14 +1,13 @@
 'use client';
 
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Disclosure, Menu } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { signIn, signOut } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import googleSignIn from '../public/google.png';
 import logo from '../public/logo.png';
 import profile from '../public/profile-img.png';
 
@@ -113,7 +112,7 @@ export default function Navbar({ user }: { user: any }) {
               {/* </div> */}
               <div className="sm:hidden md:block sm:ml-6  sm:items-center">
                 <Menu as="div" className="relative ml-3">
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 items-center justify-center">
                     <span className="text-white text-[18px]">Alex Dev</span>
                     <Image
                       src={profile}
@@ -127,61 +126,13 @@ export default function Navbar({ user }: { user: any }) {
                         Sign Out
                       </button>
                     )}
-                    <Menu.Button className="from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white">
-                      <span className="sr-only">Open user menu</span>
-                      Sign In
-                    </Menu.Button>
+                    <Link href="/login" className="m-0">
+                      <Menu.Button className="from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white">
+                        <span className="sr-only">Open user menu</span>
+                        Sign In
+                      </Menu.Button>
+                    </Link>
                   </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-200"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {user ? (
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'flex w-full px-4 py-2 text-sm text-gray-700'
-                              )}
-                              onClick={() => signOut()}
-                            >
-                              Sign out
-                            </button>
-                          )}
-                        </Menu.Item>
-                      ) : (
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'flex w-full text-sm text-gray-700 focus:outline-none'
-                              )}
-                              onClick={() => signIn('google')}
-                            >
-                              <div className="w-full flex items-center h-[60px] bg-[#1C1D1F] px-4 ">
-                                <Image
-                                  src={googleSignIn}
-                                  alt="Google Sign in"
-                                  className="w-[25px] h-[25px]"
-                                />
-                                <span className="text-white pl-3 text-[16px]">
-                                  sign in google
-                                </span>
-                              </div>
-                            </button>
-                          )}
-                        </Menu.Item>
-                      )}
-                    </Menu.Items>
-                  </Transition>
                 </Menu>
               </div>
               <div className="-mr-2 flex items-center md:hidden">
