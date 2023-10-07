@@ -6,7 +6,7 @@ import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import googleSignIn from '../public/google.png';
 import logo from '../public/logo.png';
@@ -20,71 +20,104 @@ function classNames(...classes: string[]) {
 
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 20) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  /* className={`w-full fixed top-0 left-0 z-[99999] shadow-sm ${
+        scrolling ? 'bg-[#fff]' : 'bg-[#fff0]'
+      }`} */
   return (
     <Disclosure
       as="nav"
-      className="bg-[#fff0] w-full absolute top-0 left-0 z-50 shadow-sm"
+      className="bg-[#fff0] w-full fixed top-0 left-0 z-[99999] shadow-sm"
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-[#1C1D1F] mt-9 menu-area-bg">
+          <div
+            className={`mx-auto px-4 sm:px-6 lg:px-8 bg-[#1C1D1F] duration-200 ${
+              scrolling
+                ? 'border-solid border-t-0 rounded-tl-none rounded-tr-none rounded-br-xl rounded-bl-xl border-b border-l border-r'
+                : 'max-w-7xl mt-9 border rounded-xl border-solid'
+            }  backdrop-blur-lg backdrop-saturate-[180%] bg-[rgba(17,25,40,0.75)]  border-[rgba(255,255,255,0.125)]`}
+          >
             <div className="flex h-24 justify-between items-center">
               {/* <div className="flex"> */}
-                <div className="">
-                  <Link href="/">
-                    <Image
-                      src={logo}
-                      alt="PaperPlainer.com"
-                      className="w-[160px]"
-                    />
-                  </Link>
-                </div>
-                <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                  {/* <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
+              <div className="">
+                <Link href="/">
+                  <Image
+                    src={logo}
+                    alt="PaperPlainer.com"
+                    className="w-[160px]"
+                  />
+                </Link>
+              </div>
+              <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+                {/* <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
                     <strong className="font-semibold">
                       Connect with the contact below to enhance this tool
                       further
                     </strong>
                   </a> */}
-                  <div className='flex gap-10 '>
-                    <a
-                      key="/"
-                      href="/"
-                      className=" border-slate-500 text-white mt-0 text-[18px]"
-                    >Home</a>
-                    <a
-                      key="/"
-                      href="/"
-                      className=" border-slate-500 text-white mt-0 text-[18px]"
-                    >About</a>
-                    <a
-                      key="/"
-                      href="/"
-                      className=" border-slate-500 text-white mt-0 text-[18px]"
-                    >Service</a>
-                  </div>
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        pathname === item.href
-                          ? 'border-slate-500 text-gray-900'
-                          : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
-                        'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                      )}
-                      aria-current={pathname === item.href ? 'page' : undefined}
-                    >
-                      {item.name}
-                    </a>
-                  ))}
+                <div className="flex gap-10 ">
+                  <a
+                    key="/"
+                    href="/"
+                    className=" border-slate-500 text-white mt-0 text-[18px]"
+                  >
+                    Home
+                  </a>
+                  <a
+                    key="/"
+                    href="/"
+                    className=" border-slate-500 text-white mt-0 text-[18px]"
+                  >
+                    About
+                  </a>
+                  <a
+                    key="/"
+                    href="/"
+                    className=" border-slate-500 text-white mt-0 text-[18px]"
+                  >
+                    Service
+                  </a>
                 </div>
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={classNames(
+                      pathname === item.href
+                        ? 'border-slate-500 text-gray-900'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
+                      'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+                    )}
+                    aria-current={pathname === item.href ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
               {/* </div> */}
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
                 <Menu as="div" className="relative ml-3">
-                  <div className='flex gap-2 items-center'>
-                    <span className='text-white text-[18px]'>Joy Sarkar</span>
-                  <Image
+                  <div className="flex gap-2 items-center">
+                    <span className="text-white text-[18px]">Joy Sarkar</span>
+                    <Image
                       src={profile}
                       alt="PaperPlainer.com"
                       className="w-[40px] h-[40px] rounded-md"
@@ -134,7 +167,9 @@ export default function Navbar({ user }: { user: any }) {
                                   alt="Google Sign in"
                                   className="w-[25px] h-[25px]"
                                 />
-                                <span className='text-white pl-3 text-[16px]'>sign in google</span>
+                                <span className="text-white pl-3 text-[16px]">
+                                  sign in google
+                                </span>
                               </div>
                             </button>
                           )}

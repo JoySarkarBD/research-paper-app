@@ -6,10 +6,10 @@ export default function BlogPage() {
 
   return (
     <>
-      <Navbar user={undefined} />
       <main>
+        <Navbar user={undefined} />
         <section className="custom-bg w-full h-auto">
-          <div className="py-10">
+          <div className="pb-10 pt-40">
             <div className="container mx-auto">
               <div className="flex items-center justify-center  w-full">
                 <div className="w-full min-w-[300px] max-w-7xl">

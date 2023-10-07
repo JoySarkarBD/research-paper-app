@@ -51,16 +51,15 @@ export default function LandingPage() {
   };
   return (
     <>
-      <Navbar user={undefined} />
       <main>
+        <Navbar user={undefined} />
         {/* Understand Research Papers using ChatGPT Section */}
-        <section className="content-center items-center flex flex-none flex-col flex-nowrap justify-center h-screen overflow-hidden p-0 relative w-full text-center bg-hero bg-no-repeat bg-center bg-cover">
-        <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
-                    <strong className="font-semibold">
-                      Connect with the contact below to enhance this tool
-                      further
-                    </strong>
-                  </a>
+        <section className="content-center items-center flex flex-none flex-col flex-nowrap justify-center h-screen overflow-hidden p-0 relative w-full text-center bg-hero bg-no-repeat bg-center bg-cover pt-[95px]">
+          <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
+            <strong className="font-semibold">
+              Connect with the contact below to enhance this tool further
+            </strong>
+          </a>
           <h1 className="relative text-[30px] sm:text-[26px]  xmd:text-[63px] text-white z-[3] min-w-[300px] max-w-[840px] w-full bg-[linear-gradient(_109.6deg,rgb(101,245,245)_11.2%,rgb(155,99,224)_92.5%_)] bg-clip-text brightness-[1.85] mb-2 text-center leading-none font-">
             Understand Research Papers using ChatGPT
             <div className="absolute flex-none overflow-hidden bg-no-repeat inset-0"></div>
