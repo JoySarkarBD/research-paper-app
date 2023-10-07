@@ -54,7 +54,7 @@ export default function Login() {
             {/* Submit Button or Sign in with google */}
             <div className="row items-center justify-between mb-4">
               <input
-                className="grid-cols-12 w-full searchButton bg-[#4C6699] text-white font-semibold py-3 px-6 rounded-lg"
+                className="grid-cols-12 w-full searchButton bg-[#4C6699] text-white font-semibold py-3 px-6 rounded-lg cursor-pointer"
                 type="submit"
                 value="Sign In"
               />
@@ -63,7 +63,9 @@ export default function Login() {
               </p>
               <button className="grid-cols-12 w-full searchButton bg-[#fff] text- font-semibold py-[10px] px-6 rounded-lg flex items-center justify-center gap-2">
                 <Image width={30} height={30} src={google} alt={google} />
-                <p className="m-0 text-[16px]">Sign in with google</p>
+                <p className="m-0 text-[16px] text-slate-700">
+                  Sign in with google
+                </p>
               </button>
             </div>
           </form>
