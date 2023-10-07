@@ -1,4 +1,8 @@
+'use client';
+
+import { signIn } from 'next-auth/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import google from './../../public/google.svg';
 
 export default function Login() {
@@ -61,12 +65,25 @@ export default function Login() {
               <p className="grid-cols-12 text-center w-full text-xl font-semibold text-white my-3">
                 OR
               </p>
-              <button className="grid-cols-12 w-full searchButton bg-[#fff] text- font-semibold py-[10px] px-6 rounded-lg flex items-center justify-center gap-2">
+              <button
+                className="grid-cols-12 w-full searchButton bg-[#fff] text- font-semibold py-[10px] px-6 rounded-lg flex items-center justify-center gap-2"
+                onClick={() => signIn('google')}
+              >
                 <Image width={30} height={30} src={google} alt={google} />
                 <p className="m-0 text-[16px] text-slate-700">
                   Sign in with google
                 </p>
               </button>
+            </div>
+            {/* Don't have an account? SignUP */}
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex items-center mb-0">
+                <p className="text-slate-400 m-0">
+                  <Link href="/register" className="text-[16px]">
+                    Don't have an account? Sign Up
+                  </Link>
+                </p>
+              </div>
             </div>
           </form>
         </div>
