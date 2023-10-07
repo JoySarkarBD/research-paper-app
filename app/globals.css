@@ -92,9 +92,16 @@ ul li::before {
     no-repeat white;
 } */
 .notice {
-  height: 30px;
-  margin-top: 60px;
-  font-size: 1rem;
+  /* height: 30px; */
+  font-size: 18px;
+  color: #fff;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgb(17 25 40 / 47%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 10px;
+  margin-bottom: 26px;
 }
 
 /* article page custom css start */

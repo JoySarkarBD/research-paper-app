@@ -21,7 +21,14 @@ function classNames(...classes: string[]) {
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
   const [scrolling, setScrolling] = useState(false);
-
+  const [show, setShow] = useState(null);
+  const [showSm, setShowSm] = useState(null);
+  function handleShow() {
+    setShow((e) => !e);
+  }
+  function handleShowSm() {
+    setShowSm((e) => !e);
+  }
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 20) {
@@ -66,7 +73,7 @@ export default function Navbar({ user }: { user: any }) {
                   />
                 </Link>
               </div>
-              <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+              <div className="sm:hidden md:block sm:-my-px sm:ml-6  sm:space-x-8">
                 {/* <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
                     <strong className="font-semibold">
                       Connect with the contact below to enhance this tool
@@ -113,15 +120,22 @@ export default function Navbar({ user }: { user: any }) {
                 ))}
               </div>
               {/* </div> */}
-              <div className="hidden sm:ml-6 sm:flex sm:items-center">
+              <div className="sm:hidden md:block sm:ml-6  sm:items-center">
                 <Menu as="div" className="relative ml-3">
                   <div className="flex gap-2 items-center">
                     <span className="text-white text-[18px]">Joy Sarkar</span>
                     <Image
                       src={profile}
                       alt="PaperPlainer.com"
-                      className="w-[40px] h-[40px] rounded-md"
+                      className="w-[40px] h-[40px] rounded-md cursor-pointer"
+                      onClick={handleShow}
                     />
+                    {show && (
+                      <button className="absolute bottom-[-43px] left-[35px] from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white">
+                        {/* <span className="sr-only">Open user menu</span> */}
+                        Sign Out
+                      </button>
+                    )}
                     <Menu.Button className="from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white">
                       <span className="sr-only">Open user menu</span>
                       Sign In
@@ -179,7 +193,7 @@ export default function Navbar({ user }: { user: any }) {
                   </Transition>
                 </Menu>
               </div>
-              <div className="-mr-2 flex items-center sm:hidden">
+              <div className="-mr-2 flex items-center md:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -192,8 +206,55 @@ export default function Navbar({ user }: { user: any }) {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="md:hidden bg-[#1C1D1F]">
             <div className="space-y-1 pt-2 pb-3">
+              <div className="flex justify-center	items-center gap-3 py-[11px] border-b border-gray-200 pt-[11px]">
+                <div className="relative">
+                  <Image
+                    src={profile}
+                    alt="PaperPlainer.com"
+                    className="w-[40px] h-[40px] rounded-md cursor-pointer "
+                    onClick={handleShowSm}
+                  />
+                  {showSm && (
+                    <button className="w-[104px] absolute bottom-[-43px] left-[35px] from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white">
+                      <span className="sr-only">Open user menu</span>
+                      Sign Out
+                    </button>
+                  )}
+                </div>
+
+                <span className="text-white text-[18px]">Joy Sarkar</span>
+              </div>
+              {/* {show && (
+                <button className="absolute bottom-[-43px] left-[35px] from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white">
+                  <span className="sr-only">Open user menu</span>
+                  Sign Out
+                </button>
+              )} */}
+              <div className="flex gap-4 flex-col	text-center">
+                <a
+                  key="/"
+                  href="/"
+                  className="text-white text-[18px] mt-[7px]"
+                >
+                  Home
+                </a>
+                <a
+                  key="/"
+                  href="/"
+                  className=" text-white mt-0 text-[18px] border-t border-gray-200 pt-[11px]"
+                >
+                  About
+                </a>
+                <a
+                  key="/"
+                  href="/"
+                  className=" text-white mt-0 text-[18px] border-t border-gray-200 pt-[11px]"
+                >
+                  Service
+                </a>
+              </div>
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
@@ -211,7 +272,7 @@ export default function Navbar({ user }: { user: any }) {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-gray-200 pt-4 pb-3">
+            <div className="border-t border-gray-200 ">
               {user ? (
                 <>
                   <div className="flex items-center px-4">
@@ -243,12 +304,12 @@ export default function Navbar({ user }: { user: any }) {
                   </div>
                 </>
               ) : (
-                <div className="mt-3 space-y-1">
+                <div className="space-y-1 py-[11px]">
                   <button
                     onClick={() => signIn('google')}
-                    className="flex w-full px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+                    className="from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white m-auto"
                   >
-                    Sign in with Google
+                    Sign In
                   </button>
                 </div>
               )}
