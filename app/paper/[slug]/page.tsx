@@ -1,5 +1,6 @@
 'use client';
 import Footer from 'app/components/Footer';
+import Navbar from 'app/navbar';
 import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import BeautifulArticle from '../../article';
@@ -41,13 +42,14 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <Navbar user={undefined} />
       <main>
-        <section className="custom-bg h-auto w-full">
+        <section className="custom-bg w-full min-h-screen h-full">
           <div>
             <div className="container mx-auto">
-              <div className="flex items-center justify-center  w-full">
-                <div className="w-full min-w-[300px] max-w-4xl">
-                  <p className="text-[#FCFBFE]">
+              <div className="flex items-center justify-center w-full">
+                <div className="w-full min-w-[300px] max-w-7xl">
+                  <p className="text-white">
                     Status: <span className="text-[#AEB5CA] ">{status}</span>
                   </p>{' '}
                   <BeautifulArticle article_data={artData} />

@@ -2,7 +2,6 @@ import './globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import { Suspense } from 'react';
-import Nav from './nav';
 
 export const metadata = {
   title: 'PaperPlainer - Understand arXiv Research Papers Using ChatGPT',
@@ -17,11 +16,8 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full bg-white">
-      <body className="h-screen min-w-[320px] max-w-full w-full">
-        <Suspense>
-          {/* Navbar */}
-          <Nav />
-        </Suspense>
+      <body className="h-screen min-w-[320px] max-w-full w-full flex-row justify-evenly">
+        <Suspense></Suspense>
         {children}
         <Analytics />
       </body>
