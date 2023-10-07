@@ -8,8 +8,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
 
-import googleSignIn from '../public/btn_google_signin_dark_normal_web.png';
+import googleSignIn from '../public/google.png';
 import logo from '../public/logo.png';
+import profile from '../public/profile-img.png';
 
 const navigation = [];
 
@@ -20,28 +21,48 @@ function classNames(...classes: string[]) {
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
   return (
-    <Disclosure as="nav" className="bg-blue-100 shadow-sm">
+    <Disclosure
+      as="nav"
+      className="bg-[#fff0] w-full absolute top-0 left-0 z-50 shadow-sm"
+    >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-24 justify-between">
-              <div className="flex">
-                <div className="flex flex-shrink-0 items-center mt-5">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-[#1C1D1F] mt-9 menu-area-bg">
+            <div className="flex h-24 justify-between items-center">
+              {/* <div className="flex"> */}
+                <div className="">
                   <Link href="/">
                     <Image
                       src={logo}
                       alt="PaperPlainer.com"
-                      className="w-300"
+                      className="w-[160px]"
                     />
                   </Link>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                  <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
+                  {/* <a className="ml-3 text-xs leading-5 font-medium text-sky-600 dark:text-sky-400 bg-sky-950/10 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20 notice">
                     <strong className="font-semibold">
                       Connect with the contact below to enhance this tool
                       further
                     </strong>
-                  </a>
+                  </a> */}
+                  <div className='flex gap-10 '>
+                    <a
+                      key="/"
+                      href="/"
+                      className=" border-slate-500 text-white mt-0 text-[18px]"
+                    >Home</a>
+                    <a
+                      key="/"
+                      href="/"
+                      className=" border-slate-500 text-white mt-0 text-[18px]"
+                    >About</a>
+                    <a
+                      key="/"
+                      href="/"
+                      className=" border-slate-500 text-white mt-0 text-[18px]"
+                    >Service</a>
+                  </div>
                   {navigation.map((item) => (
                     <a
                       key={item.name}
@@ -58,13 +79,19 @@ export default function Navbar({ user }: { user: any }) {
                     </a>
                   ))}
                 </div>
-              </div>
+              {/* </div> */}
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
                 <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="flex rounded-full bg-opacity-100 text-md focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                  <div className='flex gap-2 items-center'>
+                    <span className='text-white text-[18px]'>Joy Sarkar</span>
+                  <Image
+                      src={profile}
+                      alt="PaperPlainer.com"
+                      className="w-[40px] h-[40px] rounded-md"
+                    />
+                    <Menu.Button className="from-neutral-100 flex rounded-lg px-4 py-2 bg-opacity-100 text-[18px] focus:outline-none focus:ring-none focus:ring-slate-500 focus:ring-offset-2 bg-slate-700 text-white">
                       <span className="sr-only">Open user menu</span>
-                      Sign In/Sign Up
+                      Sign In
                     </Menu.Button>
                   </div>
                   <Transition
@@ -101,12 +128,13 @@ export default function Navbar({ user }: { user: any }) {
                               )}
                               onClick={() => signIn('google')}
                             >
-                              <div className="flex items-center">
+                              <div className="w-full flex items-center h-[60px] bg-[#1C1D1F] px-4 ">
                                 <Image
                                   src={googleSignIn}
                                   alt="Google Sign in"
-                                  className="w-60 h-10"
+                                  className="w-[25px] h-[25px]"
                                 />
+                                <span className='text-white pl-3 text-[16px]'>sign in google</span>
                               </div>
                             </button>
                           )}
